@@ -1,5 +1,5 @@
 
-from eapp.models import Category, Product
+from eapp.models import Category, Product,User
 
 
 def load_category():
@@ -15,3 +15,8 @@ def load_product(cate_id=None, kw=None, page=None):
         query=query.filter(Product.id.__eq__(cate_id))
 
     return query.all()
+
+def load_user_by_id(user_id):
+    return User.query.get(user_id)
+
+
